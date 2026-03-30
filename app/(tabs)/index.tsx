@@ -43,6 +43,7 @@ export default function Index() {
             onPress={pickImageAsync}
           />
           <Button label="Use this photo" />
+          <Button theme="primary"   onPress={()=>setShowAppOptions{true}} />
         </View>
       )}
     </View>
