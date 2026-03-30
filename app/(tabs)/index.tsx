@@ -20,7 +20,7 @@ export default function Index() {
     });
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
-      setShowAppOptions = true;
+      setShowAppOptions(true);
     } else {
       alert("You did not select an image.");
     }
