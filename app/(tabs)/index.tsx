@@ -7,6 +7,9 @@ import ImageViewer from "@/components/ImageViewer";
 const PlaceholderImage = require("@/assets/images/background-image.png");
 
 export default function Index() {
+  const [selectedImage, setSelectedImage] = useState<string | undefined>(
+    undefined,
+  );
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ["images"],
@@ -14,7 +17,7 @@ export default function Index() {
       quality: 1,
     });
     if (!result.canceled) {
-      console.log(result);
+      setSelectedImage(result.assets[0].uri);
     } else {
       alert("You did not select an image.");
     }
