@@ -27,6 +27,10 @@ export default function Index() {
       alert("You did not select an image.");
     }
   };
+  const onReset = () => {
+    setShowAppOptions(false);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
