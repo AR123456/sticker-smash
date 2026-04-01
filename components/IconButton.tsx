@@ -15,3 +15,13 @@ export default function IconButton({ icon, label, onPress }: Props) {
     </Pressable>
   );
 }
+const styles = StyleSheet.create({
+  iconButton: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  iconButtonLabel: {
+    color: "#fff",
+    marginTop: 12,
+  },
+});
