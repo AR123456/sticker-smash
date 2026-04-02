@@ -30,7 +30,12 @@ export default function Index() {
   const onReset = () => {
     setShowAppOptions(false);
   };
-
+  const onAddSticker = () => {
+    // TODO
+  };
+  const onSaveImageAsync = async () => {
+    // TODO
+  };
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
