@@ -10,12 +10,12 @@ type Props = PropsWithChildren<{
 export default function EmojiPicker({ isVisible, children, onClose }: Props) {
   return (
     <View>
-      <Modal>
-        <View>
-          <View>
-            <Text></Text>
-            <Pressable>
-              <MaterialIcons></MaterialIcons>
+      <Modal animationType="slide" transparent={true} visible={isVisible}>
+        <View style={styles.modalContent}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>Choose a sticker</Text>
+            <Pressable onPress={onClose}>
+              <MaterialIcons name="close" color="#fff" size={22} />
             </Pressable>
           </View>
         </View>
