@@ -23,10 +23,16 @@ export default function EmojiList({ onSelect, onCloseModal }: Props) {
     require("../assets/images/emoji6.png"),
   ]);
   return (
-    <FlatList>
-      <Pressable>
-        <Image></Image>
-      </Pressable>
-    </FlatList>
+    <FlatList
+      horizontal
+      showsHorizontalScrollIndicator={Platform.OS === "web"}
+      data={emoji}
+      contentContainerStyle={styles.listContainer}
+      renderItem={({ items, index }) => (
+        <Pressable>
+          <Image></Image>
+        </Pressable>
+      )}
+    ></FlatList>
   );
 }
