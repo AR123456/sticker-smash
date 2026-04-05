@@ -81,7 +81,10 @@ export default function Index() {
         </View>
       )}
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
-        {/* emoji list here */}
+        <EmojiList
+          onSelect={setPickedEmoji}
+          onCloseModal={onModalClose}
+        ></EmojiList>
       </EmojiPicker>
     </View>
   );
