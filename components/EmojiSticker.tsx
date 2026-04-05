@@ -1,5 +1,5 @@
 import { ImageSourcePropType, View } from "react-native";
-import { ImageRef } from "expo-image";
+import { Image } from "expo-image";
 
 type Props = {
   imageSize: number;
