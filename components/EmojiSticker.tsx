@@ -30,11 +30,13 @@ export default function EmojiSticker({ imageSize, stickerSource }: Props) {
   });
   return (
     <View style={{ top: -350 }}>
-      <Animated.Image
-        source={stickerSource}
-        resizeMode="contain"
-        style={{ width: imageSize, height: imageSize }}
-      ></Animated.Image>
+      <GestureDetector gesture={doubleTap}>
+        <Animated.Image
+          source={stickerSource}
+          resizeMode="contain"
+          style={[imageStyle, { width: imageSize, height: imageSize }]}
+        ></Animated.Image>
+      </GestureDetector>
     </View>
   );
 }
