@@ -34,6 +34,14 @@ export default function EmojiSticker({ imageSize, stickerSource }: Props) {
     translateX.value += event.changeX;
     translateY.value += event.changeY;
   });
+  const containerStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        { translateX: translateX.value },
+        { translateY: translateY.value },
+      ],
+    };
+  });
 
   return (
     <Animated.View style={{ top: -350 }}>
