@@ -30,6 +30,11 @@ export default function EmojiSticker({ imageSize, stickerSource }: Props) {
       height: withSpring(scaleImage.value),
     };
   });
+  const drag = Gesture.Pan().onChange((event) => {
+    translateX.value += event.changeX;
+    translateY.value += event.changeY;
+  });
+
   return (
     <Animated.View style={{ top: -350 }}>
       <GestureDetector gesture={doubleTap}>
