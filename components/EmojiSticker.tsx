@@ -44,14 +44,16 @@ export default function EmojiSticker({ imageSize, stickerSource }: Props) {
   });
 
   return (
-    <Animated.View style={{ top: -350 }}>
-      <GestureDetector gesture={doubleTap}>
-        <Animated.Image
-          source={stickerSource}
-          resizeMode="contain"
-          style={[imageStyle, { width: imageSize, height: imageSize }]}
-        ></Animated.Image>
-      </GestureDetector>
-    </Animated.View>
+    <GestureDetector gesture={drag}>
+      <Animated.View style={[containerStyle, { top: -350 }]}>
+        <GestureDetector gesture={doubleTap}>
+          <Animated.Image
+            source={stickerSource}
+            resizeMode="contain"
+            style={[imageStyle, { width: imageSize, height: imageSize }]}
+          ></Animated.Image>
+        </GestureDetector>
+      </Animated.View>
+    </GestureDetector>
   );
 }
