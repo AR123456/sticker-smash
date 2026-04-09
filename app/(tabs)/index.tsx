@@ -15,6 +15,7 @@ import EmojiSticker from "@/components/EmojiSticker";
 const PlaceholderImage = require("@/assets/images/background-image.png");
 
 export default function Index() {
+  const [permissionResponse, requestPermission] = MediaLibrary.usePermissions();
   const [selectedImage, setSelectedImage] = useState<string | undefined>(
     undefined,
   );
