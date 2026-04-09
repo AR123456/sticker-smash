@@ -1,6 +1,7 @@
 import { ImageSourcePropType, View, StyleSheet } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import React, { useState } from "react";
+import * as MediaLibrary from "expo-media-library";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import Button from "@/components/Button";
