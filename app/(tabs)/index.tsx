@@ -1,6 +1,7 @@
 import { ImageSourcePropType, View, StyleSheet } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { captureRef } from "react-native-view-shot";
 import * as MediaLibrary from "expo-media-library";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
