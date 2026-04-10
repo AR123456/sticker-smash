@@ -54,6 +54,7 @@ export default function Index() {
   const onModalClose = () => {
     setIsModalVisible(false);
   };
+  // mobile version
   const onSaveImageAsync = async () => {
     try {
       const localUri = await captureRef(imageRef, {
