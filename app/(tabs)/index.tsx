@@ -55,7 +55,10 @@ export default function Index() {
     setIsModalVisible(false);
   };
   const onSaveImageAsync = async () => {
-    // we will implement this later
+    try {
+    } catch (e) {
+      console.log(e);
+    }
   };
   return (
     <GestureHandlerRootView style={styles.container}>
