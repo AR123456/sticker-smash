@@ -57,8 +57,7 @@ export default function Index() {
   };
   // mobile version
   const onSaveImageAsync = async () => {
-    if (condition) {
-    } else {
+    if (Platform.OS !== "web") {
       try {
         const localUri = await captureRef(imageRef, {
           height: 440,
@@ -68,6 +67,11 @@ export default function Index() {
         if (localUri) {
           alert("Saved");
         }
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      try {
       } catch (e) {
         console.log(e);
       }
