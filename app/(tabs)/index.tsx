@@ -1,9 +1,10 @@
-import { ImageSourcePropType, View, StyleSheet } from "react-native";
+import { ImageSourcePropType, View, StyleSheet, Platform } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { useEffect, useState, useRef } from "react";
 import { captureRef } from "react-native-view-shot";
 import * as MediaLibrary from "expo-media-library";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import domtoimage from "dom-to-image";
 
 import Button from "@/components/Button";
 import ImageViewer from "@/components/ImageViewer";
@@ -56,17 +57,20 @@ export default function Index() {
   };
   // mobile version
   const onSaveImageAsync = async () => {
-    try {
-      const localUri = await captureRef(imageRef, {
-        height: 440,
-        quality: 1,
-      });
-      await MediaLibrary.saveToLibraryAsync(localUri);
-      if (localUri) {
-        alert("Saved");
+    if (condition) {
+    } else {
+      try {
+        const localUri = await captureRef(imageRef, {
+          height: 440,
+          quality: 1,
+        });
+        await MediaLibrary.saveToLibraryAsync(localUri);
+        if (localUri) {
+          alert("Saved");
+        }
+      } catch (e) {
+        console.log(e);
       }
-    } catch (e) {
-      console.log(e);
     }
   };
   return (
